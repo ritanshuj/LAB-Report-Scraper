@@ -1,9 +1,0 @@
-requests
-pytesseract
-sys
-pdf2image
-os
-shutil
-re
-flask
-nltk
