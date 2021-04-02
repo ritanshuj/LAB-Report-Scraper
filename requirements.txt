@@ -11,5 +11,4 @@ pytest-shutil==1.7.0
 regex==2021.3.17
 requests==2.25.1
 urllib3==1.26.4
-os
-sys
+os-sys==2.1.4
