@@ -1,6 +1,6 @@
 import requests
 
-
+from PIL import Image
 import pytesseract
 pytesseract.pytesseract.tesseract_cmd='C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
 import sys
@@ -175,9 +175,9 @@ def scrape():
 
                             
     f.close()
-    shutil.rmtree(APP_ROOT+"\\images")
+    shutil.rmtree(target)
    
-    print(jsonify(result))    
+      
     return render_template("index.html", output=result)
 
 
