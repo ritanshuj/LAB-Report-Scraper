@@ -9,8 +9,7 @@ import os
 import shutil
 import re
 from flask import Flask,render_template,request
-from app import db
-db.create_all()
+
 
 app = Flask(__name__)
 
