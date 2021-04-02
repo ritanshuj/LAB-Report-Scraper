@@ -10,7 +10,7 @@ import shutil
 import re
 from flask import Flask,render_template,request
 
-from nltk.tokenize import RegexpTokenizer
+
 app = Flask(__name__)
 
 APP_ROOT = os.path.dirname(sys.argv[0])
@@ -142,21 +142,29 @@ def scrape():
 
             f.close()
     
-    tokenizer = RegexpTokenizer(r'\w+')
+    
 
     result={}
     p = re.compile('\d+(\.\d+)?')
     with open(target+"out_text.txt",'r') as f:
 
         lines =f.readlines()
-        print(lines)
-        for line in lines:              
+        
+        for line in lines:
+            line=line.replace(',','')
+            line=line.replace('-','')
+            line=line.replace(';','')
+            line=line.replace('(','')
+            line=line.replace(')','')
+            line=line.replace('%','')
+            line=line.replace('[','')
+            line=line.replace(']','')
             
             for tkns in token.keys():
                 for tkn in token[tkns]:
                         
-                    if tkn.lower() in  tokenizer.tokenize(line):
-                        print(tokenizer.tokenize(line))
+                    if tkn.lower() in  line:
+                        
                         words=[]
                         for word in line.split():
                             words.append(word)
@@ -167,8 +175,7 @@ def scrape():
                             if p.match(word) :
                                 
                                 if tkns not in result.keys() and line.find(tkn.lower()) < line.find(word):
-                                    print(line)
-                                    print(word)
+                                    
                                     result[tkns]=word
                             
                   
