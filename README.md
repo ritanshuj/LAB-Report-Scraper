@@ -1,1 +1,1 @@
-# LAB-Report-Scrapper
+# LAB-Report-Scraper
