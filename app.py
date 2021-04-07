@@ -49,7 +49,7 @@ def scrape():
 
         PDF_file = target+'IMG_ID_{}.pdf'.format(IMG_ID)
 
-        pages = convert_from_path(PDF_file, 500,poppler_path='C:\\Program Files\\poppler-0.68.0\\bin')
+        pages = convert_from_path(PDF_file, 500)
 
         image_counter = 1
 
