@@ -2,7 +2,7 @@ import requests
 
 from PIL import Image
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd='C:\\Program Files\\Tesseract-OCR\\tesseract.exe'
+
 import sys
 from pdf2image import convert_from_path
 import os
