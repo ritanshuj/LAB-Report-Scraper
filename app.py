@@ -22,7 +22,7 @@ def hello_world():
 
 @app.route('/scrape',methods=['POST'])
 def scrape():
-    target = os.path.join(APP_ROOT, "images\\")
+    #target = os.path.join(APP_ROOT, "images\\")
     IMG_ID=request.form.get("ImageId")
     
     token={'BP':['BP','Blood Pressure'],'Sugar':['Sugar','Random Sugar'],'TSH':['TSH','thyroid stimulating hormone','thyroid'],
@@ -37,7 +37,7 @@ def scrape():
  
     if IMG_ID:
         #path = os.path.join('{}'.format(IMG_ID))
-        os.mkdir(target)
+        #os.mkdir(target)
         url = 'https://doctorconsole.healthok.in/viewImage/{}'.format(IMG_ID)
 
         response = requests.get(url)
