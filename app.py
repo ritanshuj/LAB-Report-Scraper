@@ -23,7 +23,7 @@ def hello_world():
 @app.route('/scrape',methods=['POST'])
 def scrape():
     #target = os.path.join(APP_ROOT, "images\\")
-    IMG_ID=request.form.get("ImageId")
+    #IMG_ID=request.form.get("ImageId")
     
     token={'BP':['BP','Blood Pressure'],'Sugar':['Sugar','Random Sugar'],'TSH':['TSH','thyroid stimulating hormone','thyroid'],
            'T4':['T4','Thyroxine'],'D-Dimer':['D-Dimer'],'CRP':['CRP','c reactive protein'],'HB':['HB','Hemoglobin'],
@@ -35,7 +35,7 @@ def scrape():
     
     
  
-    if IMG_ID:
+    '''if IMG_ID:
         #path = os.path.join('{}'.format(IMG_ID))
         #os.mkdir(target)
         url = 'https://doctorconsole.healthok.in/viewImage/{}'.format(IMG_ID)
@@ -76,14 +76,14 @@ def scrape():
         
       
     
-    else :
-        uploaded_file=request.files.getlist("image/PDF")
+    else :'''
+    uploaded_file=request.files.getlist("image/PDF")
 
-       
-        text=[]
-        for filename in uploaded_file:
-            
-            text.append(str(((pytesseract.image_to_string(Image.open(filename))))).lower())
+
+    text=[]
+    for filename in uploaded_file:
+
+        text.append(str(((pytesseract.image_to_string(Image.open(filename))))).lower())
            
    
 
@@ -102,7 +102,7 @@ def scrape():
         lines=lines.replace('%','')
         lines=lines.replace('[','')
         lines=lines.replace(']','')
-        print(lines)
+        #print(lines)
         for tkns in token.keys():
             for tkn in token[tkns]:
 
