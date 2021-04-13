@@ -80,13 +80,13 @@ def scrape():
     uploaded_file=request.files.getlist("image/PDF")
 
 
-    '''
+    text=[]
     for filename in uploaded_file:
 
         text.append(str(((pytesseract.image_to_string(Image.open(filename))))).lower())
            
-   '''
-    text=['hb 67','tlc 9.0']
+   
+    
 
     result={}
     p = re.compile('\d+(\.\d+)?')
