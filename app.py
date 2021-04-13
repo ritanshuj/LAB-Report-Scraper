@@ -76,11 +76,11 @@ def scrape():
         
       
     
-    else :
+    else :'''
     uploaded_file=request.files.getlist("image/PDF")
 
 
-    
+    '''
     for filename in uploaded_file:
 
         text.append(str(((pytesseract.image_to_string(Image.open(filename))))).lower())
