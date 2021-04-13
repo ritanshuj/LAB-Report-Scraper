@@ -9,6 +9,6 @@ Pillow
 PyPDF2
 pytesseract
 pytest-shutil
-regex
+regex==2021.3.17
 request
 urllib3
