@@ -2,7 +2,7 @@ import requests
 
 from PIL import Image
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd='https://github.com/ritanshuj/LAB-Report-Scraper/blob/main/Tesseract-OCR/tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd='/app/.apt/usr/bin/tesseract'
 import sys
 from pdf2image import convert_from_path
 import os
