@@ -2,7 +2,7 @@ import requests
 
 from PIL import Image
 import pytesseract
-pytesseract.pytesseract.tesseract_cmd='/app/.apt/usr/bin/tesseract'
+#pytesseract.pytesseract.tesseract_cmd='/app/.apt/usr/bin/tesseract'
 import sys
 from pdf2image import convert_from_path
 import os
@@ -49,7 +49,7 @@ def scrape():
 
         PDF_file = target+'IMG_ID_{}.pdf'.format(IMG_ID)
 
-        pages = convert_from_path(PDF_file, 500)
+        pages = convert_from_path(PDF_file,dpi= 500)
 
         image_counter = 1
 
